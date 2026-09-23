@@ -224,6 +224,10 @@ export function MenuApp({ products, settings }: Props) {
       <CheckoutModal
         open={checkoutOpen}
         onClose={() => setCheckoutOpen(false)}
+        onOrderSent={() => {
+          setCart([]);
+          setCheckoutOpen(false);
+        }}
         products={products}
         cart={cart}
         settings={settings}
